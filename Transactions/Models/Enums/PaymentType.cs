@@ -1,4 +1,4 @@
-﻿namespace Transactions.Models
+﻿namespace Transactions.Models.Enums
 {
     public enum PaymentType
     {

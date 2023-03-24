@@ -17,6 +17,7 @@
         public Guid SessionId { get; set; }
         public Guid GatewayIntentId { get; set; }
         public PaymentType PaymentType { get; set; }
+        public PaymentState PaymentState { get; set; }
         public PaymentAmount Amount { get; set; }
         public DateTime Created { get; set; }
     }
