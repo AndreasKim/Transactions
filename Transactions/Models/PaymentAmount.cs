@@ -1,16 +1,15 @@
-﻿namespace Transactions.Models
-{
-    public class PaymentAmount
-    {
-        public PaymentAmount(decimal total, decimal tax, string currency)
-        {
-            Total = total;
-            Tax = tax;
-            Currency = currency;
-        }
+﻿namespace Transactions.Models;
 
-        public decimal Total { get; set; }
-        public decimal Tax { get; set; }
-        public string Currency { get; set; }
+public class PaymentAmount
+{
+    public PaymentAmount(decimal total, decimal tax, string currency)
+    {
+        Total = total;
+        Tax = tax;
+        Currency = currency;
     }
+
+    public decimal Total { get; set; }
+    public decimal Tax { get; set; }
+    public string Currency { get; set; }
 }

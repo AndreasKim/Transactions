@@ -1,10 +1,9 @@
-﻿namespace Transactions.Models.Enums
+﻿namespace Transactions.Models.Enums;
+
+public enum PaymentState
 {
-    public enum PaymentState
-    {
-        None,
-        Pending,
-        Completed,
-        Failed
-    }
+    None,
+    Pending,
+    Completed,
+    Failed
 }
