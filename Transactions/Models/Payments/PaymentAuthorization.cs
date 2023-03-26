@@ -1,22 +1,15 @@
-﻿namespace Transactions.Models.Payments;
+﻿using Transactions.Models.Enums;
 
-public enum PaymentAuthorizationState
-{
-    None,
-    Pending,
-    Capturable,
-    Captured,
-    Failed
-}
+namespace Transactions.Models.Payments;
 
 public class PaymentAuthorization : Payment
 {
-    public PaymentAuthorization(PaymentAuthorizationState paymentState, Guid id, Guid sessionId,
-        Gateway paymentGateway, PaymentAmount amount, DateTime created)
-        : base(id, sessionId, paymentGateway, amount, created)
+    public PaymentAuthorization(bool captured, Guid id,
+        Guid sessionId, Gateway paymentGateway, PaymentAmount amount, DateTime created, PaymentState paymentState, Guid originalPaymentId, Guid? directPaymentId = null)
+        : base(id, sessionId, paymentGateway, amount, created, paymentState, originalPaymentId, directPaymentId)
     {
-        PaymentState = paymentState;
+        Captured = captured;
     }
 
-    public PaymentAuthorizationState PaymentState { get; set; }
+    public bool Captured { get; set; }
 }

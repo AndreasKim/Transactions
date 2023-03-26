@@ -4,14 +4,12 @@ namespace Transactions.Models.Payments;
 
 public class PaymentRefund : Payment
 {
-    public PaymentRefund(PaymentState paymentState, Guid refundedCaptureId, Guid id, Guid sessionId,
-        Gateway paymentGateway, PaymentAmount amount, DateTime created)
-        : base(id, sessionId, paymentGateway, amount, created)
+    public PaymentRefund(Guid refundedCaptureId, Guid id, Guid sessionId,
+        Gateway paymentGateway, PaymentAmount amount, DateTime created, PaymentState paymentState, Guid originalPaymentId, Guid? directPaymentId = null)
+        : base(id, sessionId, paymentGateway, amount, created, paymentState, originalPaymentId, directPaymentId)
     {
-        PaymentState = paymentState;
         RefundedCaptureId = refundedCaptureId;
     }
 
     public Guid RefundedCaptureId { get; set; }
-    public PaymentState PaymentState { get; set; }
 }
